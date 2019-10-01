@@ -1,16 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-const TodoForm = () => {
+
+const TodoForm = (props) => {
     return (
         <form>
           <input 
             type = "text"
             placeholder = "Task"
-            name = ""
-            value = ""
-            onChange = ""
+            name = "todo"
+            value = {props.value}
+            onChange = {props.changeTodo}
           />
+          <button onClick={props.addTodo}>Add</button>
+          <button onClick={props.clearCompleted}>Clear</button>
         </form>
     )
 }
